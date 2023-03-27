@@ -3,12 +3,11 @@ from uuid import uuid4
 # Create your models here.
 
 class Books(models.Model):
-    id_book = models.UUIDField(primary_key=True, default=uuid4, editable=False)
-    title = models.CharField(max_length=255)
+    id_car = models.UUIDField(primary_key=True, default=uuid4, editable=False)
+    car = models.CharField(max_length=255)
     author = models.CharField(max_length=255)
     release_year = models.IntegerField()
-    state = models.CharField(max_length=50)
-    pages = models.IntegerField()
-    publishing_company = models.CharField(max_length=255)
+    titles = models.CharField(max_length=50)
+    wins = models.IntegerField()
     create_at = models.DateField(auto_now_add=True)
 
