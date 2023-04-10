@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
+from books.views import home
 
 from rest_framework import routers
 
@@ -28,6 +28,6 @@ route.register(r'books', booksviewsets.BooksViewSet, basename="Books" )
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(route.urls)),
-    
+   #path('', include(route.urls)),
+    path('', home),
 ]
