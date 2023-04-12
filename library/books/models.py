@@ -11,3 +11,7 @@ class Books(models.Model):
     wins = models.IntegerField()
     create_at = models.DateField(auto_now_add=True)
 
+class Carros(models.Model):
+    modelo = models.CharField(max_length=150)
+    marca = models.CharField(max_length=100)
+    ano = models.IntegerField()
