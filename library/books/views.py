@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from books.forms import CarrosForms
+from books.forms import CarrosForm
 # Create your views here.
 
 def home(request):
@@ -7,5 +7,5 @@ def home(request):
 
 def form(request):
     data = {}
-    data['form'] = CarrosForms()
+    data['form'] = CarrosForm()
     return render(request, 'form.html', data)
