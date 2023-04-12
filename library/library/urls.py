@@ -20,7 +20,7 @@ from django.urls import path, include
 from rest_framework import routers
 
 from books.api import viewsets as booksviewsets
-
+from books.views import home, form
 route= routers.DefaultRouter()
 
 route.register(r'books', booksviewsets.BooksViewSet, basename="Books" )   
@@ -28,6 +28,8 @@ route.register(r'books', booksviewsets.BooksViewSet, basename="Books" )
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(route.urls)),
+    #path('', include(route.urls)),
+    path('', home),
+    path('form/', form),
     
 ]
