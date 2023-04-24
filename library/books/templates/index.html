@@ -52,6 +52,19 @@
             
           </table>
     </div>
+
+    <div class="pagination">
+      {% if db.has_previous %}
+          <a href="?page={{db.previous_page_number}}"> < </a>
+      {% endif %}
+
+      {{db.number}}
+
+      {% if db.has_next %}
+          <a href="?page={{db.next_page_number}}"> > </a>
+      {% endif %}
+    </div>
+
     {% load static %}
     <script src="{% static 'confirmar.js' %}"></script>
 </body>
