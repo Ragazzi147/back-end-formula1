@@ -16,6 +16,12 @@
         <a href="/form"  class="btn btn-info">Adicionar</a>
     </div>
 
+    <div class="col-8 m-auto pt-2 pb-2 text-center">
+      <form method="get">
+        <input type="text" id="search" name="search" class="form-control" placeholder="Insira o modelo desejado..">
+      </form>
+  </div>
+
     <div class="col-8 m-auto pt-4 pb-2 text-center ">
         <table class="table">
             <thead class="thead-dark">
@@ -53,7 +59,7 @@
           </table>
     </div>
 
-    <div class="pagination">
+    <!-- <div class="pagination">
       {% if db.has_previous %}
           <a href="?page={{db.previous_page_number}}"> < </a>
       {% endif %}
@@ -63,7 +69,7 @@
       {% if db.has_next %}
           <a href="?page={{db.next_page_number}}"> > </a>
       {% endif %}
-    </div>
+    </div> -->
 
     {% load static %}
     <script src="{% static 'confirmar.js' %}"></script>
