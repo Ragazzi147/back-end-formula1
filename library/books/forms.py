@@ -5,5 +5,5 @@ from books.models import Carros
 class CarrosForm(ModelForm):
     class Meta:
          model = Carros
-         fields = ["modelo", "marca", "ano"]
+         fields = ["modelo", "marca", "ano", "image"]
 
