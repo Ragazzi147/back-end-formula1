@@ -4,6 +4,8 @@ from books.models import Carros
 from django.core.paginator import Paginator
 # Create your views here.
 
+
+
 def home(request):
     data = {}
     search = request.GET.get('search')
