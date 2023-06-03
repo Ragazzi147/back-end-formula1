@@ -21,7 +21,7 @@ from django.conf import settings
 from rest_framework import routers
 
 from books.api import viewsets as booksviewsets
-from books.views import home, form, create, view, edit, update, delete
+from books.views import home, form, create, view, edit, update, delete,upload_img
 route= routers.DefaultRouter()
 
 route.register(r'books', booksviewsets.BooksViewSet, basename="Books" )   
@@ -32,6 +32,7 @@ urlpatterns = [
     # path('', include(route.urls)),
     path('', home, name='home'),
     path('form/', form, name='form'),
+    path('upload/', upload_img, name='image'),
     path('create/', create, name='create'),
     path('view/<int:pk>/', view, name='view'),
     path('edit/<int:pk>/', edit, name='edit'),

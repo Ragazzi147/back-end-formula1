@@ -1,9 +1,17 @@
 from django.shortcuts import render, redirect
-from books.forms import CarrosForm
+from books.forms import CarrosForm, Image
 from books.models import Carros
 from django.core.paginator import Paginator
 # Create your views here.
 
+def upload_img(request):
+    if request.method == 'POST':
+        form = Image(request.POST, request.FILES)
+        if form.is_valid():
+
+            Image = form.cleaned_data['media']
+            return render(request, 'media')
+    return render(request, 'form.html')
 
 
 def home(request):
@@ -18,6 +26,7 @@ def home(request):
     # pages = request.GET.get('page')
     # data['db'] = paginator.get_page(pages)
     return render(request, 'index.html', data)
+
 
 def form(request):
     data = {}
